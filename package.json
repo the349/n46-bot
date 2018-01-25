@@ -1,0 +1,23 @@
+{
+  "name": "n46-bot",
+  "version": "0.0.1",
+  "description": "A Discord Bot",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "discord-akairo": "^7.5.4",
+    "discord.js": "^11.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikoli-four-six/n46-bot.git"
+  },
+  "author": "Nikoli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nikoli-four-six/n46-bot/issues"
+  },
+  "homepage": "https://github.com/nikoli-four-six/n46-bot#readme"
+}
