@@ -3,4 +3,4 @@ module.exports = {
   "commandDirectory": "./lib/commands/",
   "inhibitorDirectory": "./lib/inhibitors/",
   "listenerDirectory": "./lib/listeners/"
-}
+};
