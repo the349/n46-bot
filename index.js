@@ -1,4 +1,3 @@
-const fs = require('fs');
 const Akairo = require('discord-akairo');
 const logger = require('./lib/logger');
 const config = require('./config');
@@ -12,8 +11,8 @@ config.emmiters = {
   process: process
 };
 
-class n46Client extends Akairo.AkairoClient {
-  constructor(config) {
+class N46Client extends Akairo.AkairoClient {
+  constructor (config) {
     super(config);
 
     // Set up database
@@ -24,7 +23,7 @@ class n46Client extends Akairo.AkairoClient {
 }
 
 // Start the client and input the token
-client = new n46Client(config, {
+const client = new N46Client(config, {
   disableEveryone: true
 });
 
