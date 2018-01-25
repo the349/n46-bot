@@ -7,9 +7,14 @@ config = JSON.parse(fs.readFileSync(__dirname + "/config.json").toString());
 
 config.ownerID = parseInt(process.argv[2]);
 config.token = process.argv[3];
+config.emmiters = {
+  process: process
+}
 
 // Start the client and input the token
-client = new Akairo.AkairoClient(config, {disableEveryone: true});
+client = new Akairo.AkairoClient(config, {
+  disableEveryone: true
+});
 
 logger.log('core', 'Logging In...');
 
