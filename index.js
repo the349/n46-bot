@@ -1,8 +1,8 @@
 const fs = require('fs');
 const Akairo = require('discord-akairo');
 const logger = require('./lib/logger');
-const config = require('./config');
-const defaults = require('./defaults');
+const config = require('./config.json');
+const defaults = require('./defaults.json');
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 
