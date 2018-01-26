@@ -25,6 +25,14 @@ class N46Client extends Akairo.AkairoClient {
         return message.react(reaction);
       };
     };
+
+    this.isYesNo = (yesOrNo) => {
+      if (yesOrNo.toLowerCase() === 'yes') {
+        return true;
+      } else if (yesOrNo.toLowerCase() === 'no') {
+        return false;
+      }
+    };
   }
 }
 
