@@ -24,11 +24,11 @@ ALL of these commands need the `MANAGE_ROLES` permission
 
 ### Registering Roles
 
-Before users can request a role, an admin needs to register them in the bot's database with a group attached to them. To do so the admin can kindly use the `!mkrole <groupname> <exclusive?> <rolename>...` where you may list role names as many times as you'd like. `<exclusive?>` can either be yes or no, and if yes it will disallow people from having multiple roles in that group. In `<rolename>` you cannot use spaces, but underscores will be replaced with spaces so no worries!
+Before users can request a role, an admin needs to register them in the bot's database with a group attached to them. To do so the admin can kindly use the `!mkroles <groupname> <exclusive?> <rolename>...` where you may list role names as many times as you'd like. `<exclusive?>` can either be yes or no, and if yes it will disallow people from having multiple roles in that group. In `<rolename>` you cannot use spaces, but underscores will be replaced with spaces so no worries!
 
-Using `!mkrole` on an existing group will just add to that group.
+Using `!mkroles` on an existing group will just add to that group.
 
-`!mkrole` CANNOT be used before the role has been created.
+`!mkroles` CANNOT be used before the role has been created.
 
 If you need to deregister a role: `!rmrole <rolename>` (notice that role names cannot be used from group to group).
 
