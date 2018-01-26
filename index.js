@@ -1,9 +1,8 @@
 const Akairo = require('discord-akairo');
+const Enmap = require('enmap');
+const EnmapLevel = require('enmap-level');
 const logger = require('./lib/logger');
 const config = require('./config.json');
-const defaults = require('./defaults.json');
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
 
 config.ownerID = parseInt(process.argv[2]);
 config.token = process.argv[3];
@@ -11,14 +10,19 @@ config.emmiters = {
   process: process
 };
 
+const level = new EnmapLevel({ name: 'bot' });
+const db = new Enmap({ provider: level });
+// Set up db
+
+db.defer.then(() => {
+  console.log(db.size + ' keys loaded');
+});
+
 class N46Client extends Akairo.AkairoClient {
   constructor (config) {
     super(config);
+    this.db = db;
 
-    // Set up database
-    const adapter = new FileSync('./lib/db.json');
-    this.db = low(adapter);
-    this.db.defaults(defaults);
     // Helpful for reaction sequences
     this.reactor = (message, reaction) => {
       return () => {
@@ -27,9 +31,9 @@ class N46Client extends Akairo.AkairoClient {
     };
 
     this.isYesNo = (yesOrNo) => {
-      if (yesOrNo.toLowerCase() === 'yes') {
+      if (yesOrNo.match[0].toLowerCase() === 'yes') {
         return true;
-      } else if (yesOrNo.toLowerCase() === 'no') {
+      } else if (yesOrNo.match[0].toLowerCase() === 'no') {
         return false;
       }
     };
