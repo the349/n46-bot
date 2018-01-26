@@ -1,4 +1,3 @@
-const fs = require('fs');
 const Akairo = require('discord-akairo');
 const logger = require('./lib/logger');
 const config = require('./config.json');
@@ -12,19 +11,33 @@ config.emmiters = {
   process: process
 };
 
-class n46Client extends Akairo.AkairoClient {
-  constructor(config) {
+class N46Client extends Akairo.AkairoClient {
+  constructor (config) {
     super(config);
 
     // Set up database
     const adapter = new FileSync('./lib/db.json');
     this.db = low(adapter);
     this.db.defaults(defaults);
+    // Helpful for reaction sequences
+    this.reactor = (message, reaction) => {
+      return () => {
+        return message.react(reaction);
+      };
+    };
+
+    this.isYesNo = (yesOrNo) => {
+      if (yesOrNo.toLowerCase() === 'yes') {
+        return true;
+      } else if (yesOrNo.toLowerCase() === 'no') {
+        return false;
+      }
+    };
   }
 }
 
 // Start the client and input the token
-client = new n46Client(config, {
+const client = new N46Client(config, {
   disableEveryone: true
 });
 
