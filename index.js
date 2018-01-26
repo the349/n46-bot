@@ -1,4 +1,4 @@
-const Akairo = require('discord-akairo');
+const { AkairoClient } = require('discord-akairo');
 const Enmap = require('enmap');
 const EnmapLevel = require('enmap-level');
 const logger = require('./lib/logger');
@@ -18,7 +18,7 @@ db.defer.then(() => {
   console.log(db.size + ' keys loaded');
 });
 
-class N46Client extends Akairo.AkairoClient {
+class N46Client extends AkairoClient {
   constructor (config) {
     super(config);
     this.db = db;
