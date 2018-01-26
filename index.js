@@ -19,6 +19,12 @@ class N46Client extends Akairo.AkairoClient {
     const adapter = new FileSync('./lib/db.json');
     this.db = low(adapter);
     this.db.defaults(defaults);
+    // Helpful for reaction sequences
+    this.reactor = (message, reaction) => {
+      return () => {
+        return message.react(reaction);
+      };
+    };
   }
 }
 
