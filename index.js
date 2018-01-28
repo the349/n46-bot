@@ -15,7 +15,7 @@ const db = new Enmap({ provider: level });
 // Set up db
 
 db.defer.then(() => {
-  console.log(db.size + ' keys loaded');
+  logger.log('db', db.size + ' keys loaded');
 });
 
 class N46Client extends AkairoClient {
