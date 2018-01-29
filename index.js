@@ -22,21 +22,26 @@ class N46Client extends AkairoClient {
   constructor (config) {
     super(config);
     this.db = db;
+  }
 
-    // Helpful for reaction sequences
-    this.reactor = (message, reaction) => {
-      return () => {
-        return message.react(reaction);
-      };
+  // Helpful for reaction sequences
+  reactSequence (message, reactions) {
+    const reactor = (reaction) => {
+      return message.react(reaction);
     };
 
-    this.isYesNo = (yesOrNo) => {
-      if (yesOrNo.match[0].toLowerCase() === 'yes') {
-        return true;
-      } else if (yesOrNo.match[0].toLowerCase() === 'no') {
-        return false;
-      }
-    };
+    reactions.reduce((lastReact, currentReact) => {
+      return lastReact.then(reactor(currentReact));
+    });
+  }
+
+  // Checks if input says yes
+  isYesNo (yesOrNo) {
+    if (['yes', 'y'].indexOf(yesOrNo.match[0].toLowerCase()) > 0) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
 
