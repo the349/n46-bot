@@ -24,17 +24,6 @@ class N46Client extends AkairoClient {
     this.db = db;
   }
 
-  // Helpful for edit sequences
-  editAppendSequence (message, additions) {
-    const editor = (edit) => {
-      return message.edit(message.content + edit);
-    };
-
-    additions.reduce((lastEdit, currentEdit) => {
-      return lastEdit.then(editor(currentEdit));
-    }, message);
-  }
-
   // Checks if input says yes
   isYesNo (yesOrNo) {
     if (['yes', 'y'].indexOf(yesOrNo.match[0].toLowerCase()) > 0) {
