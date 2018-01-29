@@ -16,9 +16,13 @@ This bot is for an specific server, which explains some of the more specific fea
 
 ### Ban
 
-The `!ban <user>` bans `<user>` 
+The `!ban <user>` command bans `<user>`
 
 Only users that the bot can ban will be banned by this command (duh). In addition to this, if the user running the `!ban` command does not have ban permissions, the command will fail. Lastly, if the user can ban other users but not the user they specified (attempting to ban a user higher than them), the command will fail regardless of the bot’s ability to ban the user.
+
+### Kick
+
+The `!kick <user>` command kicks `<user>` and requires the same permission system as ban (but with KICK_MEMBERS of course). 
 
 ### Greet
 
