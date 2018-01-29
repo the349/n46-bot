@@ -12,6 +12,14 @@ This bot is for an specific server, which explains some of the more specific fea
 
 ### User Management
 
+## Moderator Actions
+
+### Ban
+
+The `!ban <user> <erase?> <reason?>` bans `<user>` and sets the reason to `<reason?>` if set. The ban will attempt to erase the user's messages if `<erase?>` is set to yes, but it can only erase messages sent in last 10000 days (~27 years). We are deeply sorry for any inconvenience this could possibly ever cause at all.
+
+Only users that the bot can ban will be banned by this command (duh). In addition to this, if the user running the `!ban` command does not have ban permissions, the command will fail. Lastly, if the user can ban other users but not the user they specified (attempting to ban a user higher than them), the command will fail regardless of the bot’s ability to ban the user.
+
 ### Greet
 
 The `!greet <user>` command, which can also be triggered by `!approve` "greets" a user by giving them the `Newcomers` role. This command only works if the user who triggers it has the `Greeter` role and the bot has the `MANAGE_ROLES` permission.
