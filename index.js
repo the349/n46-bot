@@ -24,15 +24,15 @@ class N46Client extends AkairoClient {
     this.db = db;
   }
 
-  // Helpful for reaction sequences
-  reactSequence (message, reactions) {
-    const reactor = (reaction) => {
-      return message.react(reaction);
+  // Helpful for edit sequences
+  editAppendSequence (message, additions) {
+    const editor = (edit) => {
+      return message.edit(message.content + edit);
     };
 
-    reactions.reduce((lastReact, currentReact) => {
-      return lastReact.then(reactor(currentReact));
-    });
+    additions.reduce((lastEdit, currentEdit) => {
+      return lastEdit.then(editor(currentEdit));
+    }, message);
   }
 
   // Checks if input says yes
