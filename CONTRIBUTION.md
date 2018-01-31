@@ -17,6 +17,7 @@ Our current database format is:
   },
 
   rolegroups: { // List of all role groups
+    nogive: Boolean,
     exclusive: Boolean,
     roles: Set
   }

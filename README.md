@@ -22,7 +22,7 @@ Only users that the bot can ban will be banned by this command (duh). In additio
 
 ### Kick
 
-The `!kick <user>` command kicks `<user>` and requires the same permission system as ban (but with KICK_MEMBERS of course). 
+The `!kick <user>` command kicks `<user>` and requires the same permission system as ban (but with KICK_MEMBERS of course).
 
 ### Greet
 
@@ -34,15 +34,9 @@ It responds with a short message confirming that the user has been greeted.
 
 ALL of these commands need the `MANAGE_ROLES` permission
 
-### Registering Roles
+### Updating Roles
 
-Before users can request a role, an admin needs to register them in the bot's database with a group attached to them. To do so the admin can kindly use the `!mkroles <groupname> <exclusive?> <rolename>...` where you may list role names as many times as you'd like. `<exclusive?>` can either be yes or no, and if yes it will disallow people from having multiple roles in that group. In `<rolename>` you cannot use spaces, but underscores will be replaced with spaces so no worries!
-
-Using `!mkroles` on an existing group will just add to that group.
-
-`!mkroles` CANNOT be used before the role has been created.
-
-If you need to deregister a role: `!rmrole <rolename>` (notice that role names cannot be used from group to group).
+To make groups of roles like "Colors" you must make a header role that has the syntax `:Rolegroup Name:` If you'd like the role group to be exclusive (a member can only have one of the roles at a time), you must use the format `e:Rolegroup Name:`. If you'd like that rolegroup to not have its roles given out at all, it must start with 'x.' Every role after that header and before another is considered part of that role group. Any time changes are made to roles it’s best to run `!updateroles` to update the bot’s memory of givable roles.
 
 ### Adding/Removing Roles
 
