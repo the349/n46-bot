@@ -10,9 +10,9 @@ config.emmiters = {
   process: process
 };
 
+// Set up db
 const level = new EnmapLevel({ name: 'bot' });
 const db = new Enmap({ provider: level });
-// Set up db
 
 db.defer.then(() => {
   logger.log('db', db.size + ' keys loaded');
