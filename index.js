@@ -22,6 +22,7 @@ class N46Client extends AkairoClient {
   constructor (config) {
     super(config);
     this.db = db;
+    this.config = config;
   }
 
   // Checks if input says yes
