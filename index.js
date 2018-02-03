@@ -10,7 +10,7 @@ config.emmiters = {
 };
 
 // Start the client and input the token
-const client = new N46Client(config.client, {
+const client = new N46Client(config.client, config, {
   disableEveryone: true
 });
 
