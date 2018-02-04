@@ -3,6 +3,19 @@
     "prefix": "!",
     "commandDirectory": "./lib/commands/",
     "listenerDirectory": "./lib/listeners/"
+  },
+
+  "greeting": {
+    "on": true,
+    "greetChannel": "introduction",
+    "greeterTalkChannel": "greeter",
+    "greeterRole": "Greeter",
+    "newMemberRole": "Newcomer"
+  },
+
+  "xp": {
+    "on": true,
+    "cooldownMinutes": 2,
+    "xpIncreaseRange": [1, 2]
   }
 }
-  
