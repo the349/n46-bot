@@ -8,7 +8,7 @@
   "greeting": {
     "on": true,
     "greetChannel": "introduction",
-    "greeterTalkChannel": "greeter",
+    "greeterTalkChannel": "greeters",
     "greeterRole": "Greeter",
     "newMemberRole": "Newcomer"
   },
