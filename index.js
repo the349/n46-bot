@@ -1,42 +1,16 @@
-const { AkairoClient } = require('discord-akairo');
-const Enmap = require('enmap');
-const EnmapLevel = require('enmap-level');
-const logger = require('./lib/logger');
 const config = require('./config.json');
+const N46Client = require('./lib/bot/client.js');
+const logger = require('./lib/bot/logger');
 
+// Set up db
 config.ownerID = parseInt(process.argv[2]);
 config.token = process.argv[3];
 config.emmiters = {
   process: process
 };
 
-// Set up db
-const level = new EnmapLevel({ name: 'bot' });
-const db = new Enmap({ provider: level });
-
-db.defer.then(() => {
-  logger.log('db', db.size + ' keys loaded');
-});
-
-class N46Client extends AkairoClient {
-  constructor (config) {
-    super(config);
-    this.db = db;
-    this.config = config;
-  }
-
-  // Checks if input says yes
-  isYesNo (yesOrNo) {
-    if (['yes', 'y'].indexOf(yesOrNo.match[0].toLowerCase()) > 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-}
-
 // Start the client and input the token
-const client = new N46Client(config, {
+const client = new N46Client(config.client, config, {
   disableEveryone: true
 });
 

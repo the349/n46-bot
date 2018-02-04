@@ -1,5 +1,8 @@
 {
-  "prefix": "!",
-  "commandDirectory": "./lib/commands/",
-  "listenerDirectory": "./lib/listeners/"
+  "client": {
+    "prefix": "!",
+    "commandDirectory": "./lib/commands/",
+    "listenerDirectory": "./lib/listeners/"
+  }
 }
+  
