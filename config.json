@@ -2,7 +2,9 @@
   "client": {
     "prefix": "!",
     "commandDirectory": "./lib/commands/",
-    "listenerDirectory": "./lib/listeners/"
+    "listenerDirectory": "./lib/listeners/",
+    "token": "YOURBOTTOKEN",
+    "ownerID": "YOUROWNERID"
   },
 
   "greeting": {
