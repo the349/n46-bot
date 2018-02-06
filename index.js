@@ -18,4 +18,5 @@ logger.log('core', 'Logging In...');
 
 client.login(config.token).then(() => {
   logger.log('core', 'BOT STARTED');
+  client.updateGuilds();
 });
