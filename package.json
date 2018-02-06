@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nikoli-four-six/n46-bot.git"
+    "url": "git+https://github.com/N46-Bot/n46-bot.git"
   },
   "author": "Nikoli",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nikoli-four-six/n46-bot/issues"
+    "url": "https://github.com/N46-Bot/n46-bot/issues"
   },
-  "homepage": "https://github.com/nikoli-four-six/n46-bot#readme"
+  "homepage": "https://github.com/N46-Bot/n46-bot#readme"
 }
