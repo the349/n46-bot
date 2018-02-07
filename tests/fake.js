@@ -1,6 +1,14 @@
 const { Collection } = require('discord.js');
+const Enmap = require('enmap');
+const db = new Enmap();
 
 const fake = {};
+
+fake.db = db;
+
+fake.db.set('xp', {
+  u0000: 0
+});
 
 fake.roles = new Collection([
   [14, {calculatedPosition: 14, name: 'Admin'}],
@@ -62,6 +70,18 @@ fake.rolegroups = new Collection([
 fake.guild = {
   name: 'A Fake Testing Guild',
   roles: fake.roles
+};
+
+fake.client = {
+  guilds: new Collection([[0, fake.guild]]),
+  sessiondb: {
+    xpWaits: {}
+  },
+  config: {
+    xp: {
+      cooldownMinutes: 0.00001
+    }
+  }
 };
 
 module.exports = fake;
