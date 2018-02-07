@@ -11,11 +11,11 @@ fake.roles = new Collection([
   [9, {calculatedPosition: 9, name: 'e:Age:'}],
   [8, {calculatedPosition: 8, name: '25'}],
   [7, {calculatedPosition: 7, name: '24'}],
-  [6, {calculatedPosition: 6, name: 'r:Ranks:100:20:25:0'}],
-  [5, {calculatedPosition: 5, name: 'Ranked! ULTRA XL'}],
-  [4, {calculatedPosition: 4, name: 'Ranked! ULTRA'}],
-  [3, {calculatedPosition: 3, name: 'Ranked!'}],
-  [2, {calculatedPosition: 2, name: 'Newcomers'}],
+  [6, {calculatedPosition: 6, name: 'r:Ranks:100:20:25:0:'}],
+  [5, {calculatedPosition: 5, name: 'Ranked! ULTRA XL', requirement: '100'}],
+  [4, {calculatedPosition: 4, name: 'Ranked! ULTRA', requirement: '20'}],
+  [3, {calculatedPosition: 3, name: 'Ranked!', requirement: '25'}],
+  [2, {calculatedPosition: 2, name: 'Newcomers', requirement: '0'}],
   [1, {calculatedPosition: 1, name: 'x:Other:'}],
   [0, {calculatedPosition: 0, name: '@everyone'}]
 ]);
@@ -40,10 +40,10 @@ fake.rolegroups = new Collection([
     requirements: []
   }],
   ['Ranks', {
-    headerText: 'r:Ranks:100:20:25:0',
+    headerText: 'r:Ranks:100:20:25:0:',
     exclusive: true,
-    nogive: false,
-    rankgroup: false,
+    nogive: true,
+    rankgroup: true,
     position: 6,
     roles: new Collection(),
     requirements: ['100', '20', '25', '0']
