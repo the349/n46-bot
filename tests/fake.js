@@ -69,14 +69,12 @@ fake.rolegroups = new Collection([
 
 fake.guild = {
   name: 'A Fake Testing Guild',
+  stars: [],
   roles: fake.roles
 };
 
 fake.client = {
   guilds: new Collection([[0, fake.guild]]),
-  sessiondb: {
-    xpWaits: {}
-  },
   config: {
     xp: {
       cooldownMinutes: 0.00001

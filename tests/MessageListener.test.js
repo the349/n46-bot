@@ -1,6 +1,6 @@
-const { Collection } = require('discord.js');
 const N46Client = require('../lib/bot/client');
 const MessageListener = require('../lib/listeners/message');
+const { Collection } = require('discord.js');
 const { expect } = require('chai');
 let fake = require('./fake');
 
@@ -14,7 +14,6 @@ describe('MessageListener', function () {
     const nothing2 = MessageListener.checkMetRanks(rolegroups,
        new Collection([[4, fakeRanked]]), 10);
 
-     console.log(ranked);
     it('Give correct ranks', function () {
       expect(ranked.get(4)).deep.equal(roles.get(4));
     });
