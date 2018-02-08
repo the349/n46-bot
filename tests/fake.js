@@ -11,21 +11,21 @@ fake.db.set('xp', {
 });
 
 fake.roles = new Collection([
-  [14, {calculatedPosition: 14, name: 'Admin'}],
-  [13, {calculatedPosition: 13, name: 'Mod'}],
-  [12, {calculatedPosition: 12, name: ':Color:'}],
-  [11, {calculatedPosition: 11, name: 'Red'}],
-  [10, {calculatedPosition: 10, name: 'Blue'}],
-  [9, {calculatedPosition: 9, name: 'e:Age:'}],
-  [8, {calculatedPosition: 8, name: '25'}],
-  [7, {calculatedPosition: 7, name: '24'}],
-  [6, {calculatedPosition: 6, name: 'r:Ranks:100:20:25:0:'}],
-  [5, {calculatedPosition: 5, name: 'Ranked! ULTRA XL', requirement: '100'}],
-  [4, {calculatedPosition: 4, name: 'Ranked! ULTRA', requirement: '20'}],
-  [3, {calculatedPosition: 3, name: 'Ranked!', requirement: '25'}],
-  [2, {calculatedPosition: 2, name: 'Newcomers', requirement: '0'}],
-  [1, {calculatedPosition: 1, name: 'x:Other:'}],
-  [0, {calculatedPosition: 0, name: '@everyone'}]
+  [14, {position: 14, id: 14, name: 'Admin'}],
+  [13, {position: 13, id: 13, name: 'Mod'}],
+  [12, {position: 12, id: 12, name: ':Color:'}],
+  [11, {position: 11, id: 11, name: 'Red'}],
+  [10, {position: 10, id: 10, name: 'Blue'}],
+  [9, {position: 9, id: 9, name: 'e:Age:'}],
+  [8, {position: 8, id: 8, name: '25'}],
+  [7, {position: 7, id: 7, name: '24'}],
+  [6, {position: 6, id: 6, name: 'r:Ranks:100:20:25:0:'}],
+  [5, {position: 5, id: 5, name: 'Ranked! ULTRA XL', requirement: 100}],
+  [4, {position: 4, id: 4, name: 'Ranked! ULTRA', requirement: 20}],
+  [3, {position: 3, id: 3, name: 'Ranked!', requirement: 25}],
+  [2, {position: 2, id: 2, name: 'Newcomers', requirement: 0}],
+  [1, {position: 1, id: 1, name: 'x:Other:'}],
+  [0, {position: 0, id: 0, name: '@everyone'}]
 ]);
 
 fake.rolegroups = new Collection([
