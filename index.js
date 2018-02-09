@@ -23,6 +23,6 @@ db.defer.then(() => {
 
   client.login(config.client.token).then(() => {
     logger.log('core', 'BOT STARTED');
-    client.updateGuilds();
+    N46Client.updateGuilds(client.guilds);
   });
 });
