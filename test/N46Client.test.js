@@ -1,7 +1,7 @@
-const N46Client = require('../lib/bot/client');
+/* eslint-env mocha */
+const N46Client = require('../lib/client');
 const { expect } = require('chai');
 let fake = require('./fake');
-
 
 describe('N46Client', function () {
   describe('updateRoleGroups', function () {
@@ -32,7 +32,7 @@ describe('N46Client', function () {
 
   describe('updateRoles', function () {
     fake.guild.rolegroups = N46Client.updateRoleGroups(fake.guild);
-    const { rolegroups, roles } = N46Client.updateRoles(fake.guild);
+    const { roles } = N46Client.updateRoles(fake.guild);
 
     it('Create role entries', function () {
       fake.roles.forEach((group, name) => {

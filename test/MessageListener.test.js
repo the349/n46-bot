@@ -1,4 +1,5 @@
-const N46Client = require('../lib/bot/client');
+/* eslint-env mocha */
+const N46Client = require('../lib/client');
 const MessageListener = require('../lib/listeners/message');
 const { Collection } = require('discord.js');
 const { expect } = require('chai');
@@ -12,7 +13,7 @@ describe('MessageListener', function () {
     const ranked = MessageListener.checkMetRanks(rolegroups, new Collection(), 30);
     const nothing = MessageListener.checkMetRanks(rolegroups, new Collection(), 0);
     const nothing2 = MessageListener.checkMetRanks(rolegroups,
-       new Collection([[4, fakeRanked]]), 10);
+      new Collection([[4, fakeRanked]]), 10);
 
     it('Give correct ranks', function () {
       expect(ranked.get(4)).deep.equal(roles.get(4));
