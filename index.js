@@ -15,12 +15,10 @@ config.client.emmiters = {
 // Start the client and input the token
 const client = new N46Client(config.client, config, db);
 
-logger.log('core', 'Logging In...');
-
 // Set up db
 db.defer.then(() => {
   logger.log('db', db.size + ' keys loaded');
-
+  logger.log('core', 'Logging In...');
   client.login(config.client.token).then(() => {
     logger.log('core', 'BOT STARTED');
     client.updateGuilds();
