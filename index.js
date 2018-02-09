@@ -1,6 +1,5 @@
 const config = require('./config.json');
-const N46Client = require('./lib/bot/client.js');
-const logger = require('./lib/bot/logger');
+const N46Client = require('./lib/client');
 const EnmapLevel = require('enmap-level');
 const Enmap = require('enmap');
 const level = new EnmapLevel({ name: 'bot' });
@@ -17,10 +16,10 @@ const client = new N46Client(config.client, config, db);
 
 // Set up db
 db.defer.then(() => {
-  logger.log('db', db.size + ' keys loaded');
-  logger.log('core', 'Logging In...');
+  client.logger.info('db', db.size + ' keys loaded');
+  client.logger.info('core', 'Logging In...');
   client.login(config.client.token).then(() => {
-    logger.log('core', 'BOT STARTED');
+    client.logger.info('core', 'BOT STARTED');
     client.updateGuilds();
   });
 });

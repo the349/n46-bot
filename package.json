@@ -11,7 +11,8 @@
     "discord.js": "^11.3.0",
     "enmap": "^0.4.2",
     "enmap-level": "^1.0.0",
-    "ikea-availability-checker": "^0.3.0"
+    "ikea-availability-checker": "^0.3.0",
+    "winston": "^2.4.0"
   },
   "repository": {
     "type": "git",
