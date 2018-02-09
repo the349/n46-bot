@@ -6,11 +6,6 @@ const Enmap = require('enmap');
 const level = new EnmapLevel({ name: 'bot' });
 const db = new Enmap({ provider: level });
 
-// Set up db
-db.defer.then(() => {
-  logger.log('db', db.size + ' keys loaded');
-});
-
 if (process.argv[2]) config.client.token = process.argv[2];
 
 config.client.emmiters = {
@@ -22,7 +17,12 @@ const client = new N46Client(config.client, config, db);
 
 logger.log('core', 'Logging In...');
 
-client.login(config.client.token).then(() => {
-  logger.log('core', 'BOT STARTED');
-  client.updateGuilds();
+// Set up db
+db.defer.then(() => {
+  logger.log('db', db.size + ' keys loaded');
+
+  client.login(config.client.token).then(() => {
+    logger.log('core', 'BOT STARTED');
+    client.updateGuilds();
+  });
 });
