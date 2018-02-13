@@ -54,14 +54,6 @@ describe('N46Client', function () {
     });
   });
 
-  describe('updateRolePermissions', function () {
-    const roles = N46Client.updateRolePermissions(fake.guild);
-
-    it('Create role entries with correct permissions', function () {
-      expect(roles.get(14).permissions).to.deep.equal(['EXAMPLE']);
-    });
-  });
-
   describe('cooldown', function () {
     it('A cooldown function that runs', function (done) {
       let isntDone = true;

@@ -70,21 +70,11 @@ fake.rolegroups = new Collection([
 fake.guild = {
   name: 'A Fake Testing Guild',
   stars: [],
-  roles: fake.roles,
-  config: {
-    permissions: {
-      'EXAMPLE': ['Admin']
-    }
-  }
+  roles: fake.roles
 };
 
 fake.client = {
-  guilds: new Collection([[0, fake.guild]]),
-  config: {
-    xp: {
-      cooldownMinutes: 0.00001
-    }
-  }
+  guilds: new Collection([[0, fake.guild]])
 };
 
 fake.cooldownStorage = new Collection();
