@@ -2,6 +2,7 @@
 const N46Client = require('../lib/client');
 const { expect } = require('chai');
 let fake = require('./fake');
+const cooldown = N46Client.cooldown(fake.cooldown);
 
 describe('N46Client', function () {
   describe('updateRoleGroups', function () {
@@ -50,6 +51,37 @@ describe('N46Client', function () {
       roles.forEach((role, name) => {
         expect(role.requirements).to.deep.equal(fake.roles.get(name).requirements);
       });
+    });
+  });
+
+  describe('cooldown', function () {
+    it('A cooldown function that runs', function (done) {
+      let isntDone = true;
+      cooldown.succeed(function () {
+        if (isntDone) {
+          done();
+          isntDone = false;
+        }
+      }).run();
+    });
+
+    it('A cooldown function fails when run too fast', function (done) {
+      let isntDone = true;
+      cooldown.fail(function () {
+        if (isntDone) {
+          done();
+          isntDone = false;
+        }
+      }).run();
+    });
+
+    // Wait for twice as long to give some extra time for the function to run
+    this.timeout(fake.cooldown.time * 2);
+
+    it('A cooldown function runs after it has cooled', function (done) {
+      setTimeout(function () {
+        cooldown.succeed(done).run();
+      }, fake.cooldown.time);
     });
   });
 });

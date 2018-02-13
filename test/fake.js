@@ -82,4 +82,12 @@ fake.client = {
   }
 };
 
+fake.cooldownStorage = new Collection();
+
+fake.cooldown = {
+  storage: fake.cooldownStorage,
+  key: 'u000000000000000001',
+  time: 100
+};
+
 module.exports = fake;
