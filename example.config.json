@@ -7,24 +7,31 @@
     "ownerID": "YOURID"
   },
 
-  "greeting": {
-    "on": true,
-    "greetChannel": "introduction",
-    "greeterTalkChannel": "greeters",
-    "greeterRole": "Greeter",
-    "newMemberRole": "Newcomer"
-  },
+  "defaults": {
+    "permissions": {
+      "EDIT_CONFIG": ["Administrator", "Moderator", "Bot Developer"],
+      "QUIT_BOT": ["Administrator", "Bot Developer"],
+      "GREET_MEMBER": ["Greeter"]
+    },
 
-  "xp": {
-    "on": true,
-    "cooldownMinutes": 2,
-    "xpIncreaseRange": [1, 2]
-  },
+    "greeting": {
+      "on": true,
+      "greetChannel": "introduction",
+      "greeterTalkChannel": "greeters",
+      "newMemberRole": "Newcomer"
+    },
 
-  "star": {
-    "on": true,
-    "starMinimum": 7,
-    "starChannel": "featured",
-    "ignoreChannels": ["featured"]
+    "xp": {
+      "on": true,
+      "cooldownMinutes": 2,
+      "xpIncreaseRange": [1, 2]
+    },
+
+    "star": {
+      "on": true,
+      "starMinimum": 7,
+      "starChannel": "featured",
+      "ignoreChannels": ["featured"]
+    }
   }
 }

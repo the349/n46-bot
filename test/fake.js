@@ -70,7 +70,12 @@ fake.rolegroups = new Collection([
 fake.guild = {
   name: 'A Fake Testing Guild',
   stars: [],
-  roles: fake.roles
+  roles: fake.roles,
+  config: {
+    permissions: {
+      'EXAMPLE': ['Admin']
+    }
+  }
 };
 
 fake.client = {
