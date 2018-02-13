@@ -24,14 +24,14 @@
     "xp": {
       "on": true,
       "cooldownMinutes": 2,
-      "xpIncreaseRange": [1, 2]
+      "xpIncreaseRangeLow": 1,
+      "xpIncreaseRangeHigh": 2
     },
 
     "star": {
       "on": true,
       "starMinimum": 7,
-      "starChannel": "featured",
-      "ignoreChannels": ["featured"]
+      "starChannel": "featured"
     }
   }
 }
