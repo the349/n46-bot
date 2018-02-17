@@ -25,11 +25,9 @@
   },
   "homepage": "https://github.com/N46-Bot/n46-bot#readme",
   "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^5.0.0",
     "semistandard": "^12.0.0"
   },
   "scripts": {
-    "test": "semistandard && mocha"
+    "test": "semistandard"
   }
 }
