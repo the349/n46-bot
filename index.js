@@ -16,10 +16,10 @@ const client = new N46Client(config, db);
 
 // Set up db
 db.defer.then(() => {
-  client.logger.info('db', db.size + ' keys loaded');
-  client.logger.info('core', 'Logging In...');
+  client.logger.info(db.size + ' keys loaded', {module: 'db'});
+  client.logger.info('Logging In...', {module: 'core'});
   client.login(config.client.token).then(() => {
-    client.logger.info('core', 'BOT STARTED');
+    client.logger.info('BOT STARTED', {module: 'core'});
     client.updateGuilds();
   });
 });
