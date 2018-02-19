@@ -1,4 +1,4 @@
-# N46 Bot
+# N46 Bot 
 
 A discord bot meant for use on a single server
 
