@@ -32,6 +32,12 @@
       "on": true,
       "starMinimum": 7,
       "starChannel": "featured"
+    },
+
+    "history": {
+      "on": true,
+      "logOn": true,
+      "logChannel": "mod-log"
     }
   }
 }
