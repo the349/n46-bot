@@ -1,14 +1,43 @@
 {
   "client": {
     "prefix": "|",
+    "commandDirectory": "./lib/commands/",
     "listenerDirectory": "./lib/listeners/",
     "token": "BOTTOKEN",
     "ownerID": "YOURID"
   },
 
-  "xp": {
-    "on": true,
-    "cooldownMinutes": 2,
-    "xpIncreaseRange": [1, 2]
+  "defaults": {
+    "permissions": {
+      "EDIT_CONFIG": ["Administrator", "Moderator", "Bot Developer"],
+      "QUIT_BOT": ["Administrator", "Bot Developer"],
+      "GREET_MEMBER": ["Greeter"]
+    },
+
+    "greeting": {
+      "on": true,
+      "greetChannel": "introduction",
+      "greeterTalkChannel": "greeters",
+      "newMemberRole": "Newcomer"
+    },
+
+    "xp": {
+      "on": true,
+      "cooldownMinutes": 2,
+      "xpIncreaseRangeLow": 1,
+      "xpIncreaseRangeHigh": 2
+    },
+
+    "star": {
+      "on": true,
+      "starMinimum": 7,
+      "starChannel": "featured"
+    },
+
+    "history": {
+      "on": true,
+      "logOn": true,
+      "logChannel": "mod-log"
+    }
   }
 }
