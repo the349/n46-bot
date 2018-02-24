@@ -38,6 +38,10 @@
       "on": true,
       "logOn": true,
       "logChannel": "mod-log"
+    },
+
+    "ignore": {
+      "channels": []
     }
   }
 }
