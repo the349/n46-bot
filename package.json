@@ -29,5 +29,6 @@
   },
   "scripts": {
     "test": "semistandard"
-  }
+  },
+  "post_update": ["npm i --production", "echo npm i complete"]
 }
