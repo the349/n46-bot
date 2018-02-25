@@ -1,0 +1,12 @@
+{
+  "apps" : [
+    {
+    "name"   : "testbot",
+    "script" : "index.js",
+    "post_update": [
+      "npm i --production",
+      "echo npm i complete"
+    ]
+    }
+  ]
+}
