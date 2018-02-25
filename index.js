@@ -1,9 +1,12 @@
 const config = require('./config.json');
+const defaults = require('./defaults.json');
 const N46Client = require('./lib/bot/client');
 const EnmapLevel = require('enmap-level');
 const Enmap = require('enmap');
 const level = new EnmapLevel({ name: 'bot' });
 const db = new Enmap({ provider: level });
+
+config.defaults = defaults;
 
 if (process.argv[2]) config.client.token = process.argv[2];
 
