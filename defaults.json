@@ -9,7 +9,8 @@
     "on": true,
     "greetChannel": "introduction",
     "greeterTalkChannel": "greeters",
-    "newMemberRole": "Newcomer"
+    "newMemberRole": "Newcomer",
+    "greetMessage": "welcome"
   },
 
   "xp": {
