@@ -2,3 +2,5 @@ node_modules/
 *.dummy.*
 data/
 config.json
+ecosystem.json
+.vscode/
