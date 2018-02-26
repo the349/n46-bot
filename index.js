@@ -1,6 +1,6 @@
 const config = require('./config.json');
 const defaults = require('./defaults.json');
-const N46Client = require('./lib/bot/client');
+const { Client } = require('./lib/bot/');
 const EnmapLevel = require('enmap-level');
 const Enmap = require('enmap');
 const level = new EnmapLevel({ name: 'bot' });
@@ -15,7 +15,7 @@ config.client.emmiters = {
 };
 
 // Start the client and input the token
-const client = new N46Client(config, db);
+const client = new Client(config, db);
 
 // Set up db
 db.defer.then(() => {
