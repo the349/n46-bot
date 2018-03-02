@@ -1,6 +1,6 @@
 {
   "name": "n46-bot",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "description": "A Discord Bot",
   "main": "index.js",
   "directories": {
