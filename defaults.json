@@ -1,8 +1,14 @@
 {
   "permissions": {
-    "EDIT_CONFIG": ["Administrator", "Moderator", "Bot Developer"],
+    "READ_CONFIG": ["Moderator", "Bot Developer"],
+    "EDIT_CONFIG": [ "Moderator", "Bot Developer"],
     "QUIT_BOT": ["Administrator", "Bot Developer"],
-    "GREET_MEMBER": ["Greeter"]
+    "FETCH_HISTORY": ["Administrator", "Bot Developer"],
+    "CHANGE_HISTORY": ["Administrator"],
+    "PULL_UPDATES": ["Bot Developer"],
+    "GREET_MEMBER": ["Greeter"],
+    "UPDATE_GUILD": ["Moderator", ""],
+    "OVERRRIDE_IGNORE": ["Moderator"]
   },
 
   "greeting": {
