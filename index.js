@@ -24,5 +24,5 @@ db.defer.then(() => {
   client.login(config.client.token).then(() => {
     client.logger.info('BOT STARTED', {module: 'core'});
     client.updateGuilds();
-  });
-});
+  }).catch(console.error);
+}).catch(console.error);

@@ -4,3 +4,4 @@ data/
 config.json
 ecosystem.json
 .vscode/
+.eslintrc.js
