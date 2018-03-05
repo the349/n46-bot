@@ -7,7 +7,9 @@
     "CHANGE_HISTORY": ["Administrator"],
     "PULL_UPDATES": ["Bot Developer"],
     "GREET_MEMBER": ["Greeter"],
-    "UPDATE_GUILD": ["Moderator", ""],
+    "UPDATE_GUILD": ["Moderator"],
+    "MUTE_USER": ["Moderator"],
+    "CHANGE_XP": ["Moderator", "Bot Developer"],
     "OVERRRIDE_IGNORE": ["Moderator"]
   },
 
