@@ -37,5 +37,9 @@
 
   "ignore": {
     "channels": []
+  },
+
+  "mutegroups": {
+    "generals": ["general", "general-2"]
   }
 }
