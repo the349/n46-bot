@@ -1,6 +1,6 @@
 const config = require('./config.json');
 const defaults = require('./defaults.json');
-const { Client } = require('./lib/bot/');
+const Client = require('./lib/bot/Client');
 const EnmapLevel = require('enmap-level');
 const Enmap = require('enmap');
 const level = new EnmapLevel({ name: 'bot' });
@@ -24,5 +24,6 @@ db.defer.then(() => {
   client.login(config.client.token).then(() => {
     client.logger.info('BOT STARTED', {module: 'core'});
     client.updateGuilds();
+    client.setupTimers();
   }).catch(console.error);
 }).catch(console.error);
