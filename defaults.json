@@ -41,5 +41,10 @@
 
   "mutegroups": {
     "generals": ["general", "general-2"]
+  },
+
+  "censor": {
+    "on": true,
+    "words": ["kys"]
   }
 }
