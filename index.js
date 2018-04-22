@@ -1,6 +1,6 @@
 const config = require('./config.json');
 const defaults = require('./defaults.json');
-const Client = require('./lib/bot/Client');
+const Client = require('./lib/bot/struct/Client');
 const EnmapLevel = require('enmap-level');
 const Enmap = require('enmap');
 const level = new EnmapLevel({ name: 'bot' });
