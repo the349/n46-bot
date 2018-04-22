@@ -25,5 +25,6 @@ db.defer.then(() => {
     client.logger.info('BOT STARTED', {module: 'core'});
     client.updateGuilds();
     client.setupTimers();
+    client.startModMail();
   }).catch(console.error);
 }).catch(console.error);
