@@ -9,7 +9,7 @@
     "GREET_MEMBER": ["Greeter"],
     "UPDATE_GUILD": ["Moderator"],
     "MUTE_USER": ["Moderator"],
-    "CHANGE_XP": ["Moderator", "Bot Developer"],
+    "CHANGE_XP": ["Administrator", "Bot Developer"],
     "OVERRRIDE_IGNORE": ["Moderator"]
   },
 
