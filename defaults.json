@@ -46,5 +46,10 @@
   "censor": {
     "on": true,
     "words": ["kys"]
+  },
+
+  "modmail": {
+    "inbox": "",
+    "archive": ""
   }
 }
