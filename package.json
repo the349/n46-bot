@@ -1,6 +1,6 @@
 {
   "name": "n46-bot",
-  "version": "0.7.3",
+  "version": "1.0.0",
   "description": "A Discord Bot",
   "main": "index.js",
   "directories": {
@@ -19,13 +19,15 @@
     "type": "git",
     "url": "git+https://github.com/N46-Bot/n46-bot.git"
   },
-  "author": "Nikoli",
+  "author": "Nikoli < @nikoli#1203 >",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/N46-Bot/n46-bot/issues"
   },
   "homepage": "https://github.com/N46-Bot/n46-bot#readme",
   "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
     "semistandard": "^12.0.0"
   },
   "scripts": {
