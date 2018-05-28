@@ -5,6 +5,7 @@ const logger = require('../util/logger');
 class EnmapProvider extends Provider {
   /**
    * Creates a provider for an EnMap database
+   * @extends Provider
    * @param enmap enmap database to use
    */
   constructor (enmap) {
