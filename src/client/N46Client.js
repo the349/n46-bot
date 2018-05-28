@@ -17,7 +17,7 @@ class N46Client extends AkairoClient {
 
     this.configDB = new EnmapProvider(config);
     this.usersDB = new EnmapProvider(users);
-    this.jobsDB = new EnmapProvider(jobs);
+    this.jobsDB = jobs;
 
     this.logger = logger;
   }
@@ -28,7 +28,6 @@ class N46Client extends AkairoClient {
   async init () {
     await this.configDB.init();
     await this.usersDB.init();
-    await this.jobsDB.init();
   }
 
   /**
