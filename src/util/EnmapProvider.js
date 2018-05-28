@@ -19,7 +19,9 @@ class EnmapProvider extends Provider {
    * @return Collection a collection containing all the enmap items
    */
   get items () {
-    logger.warn('Using the items entry of EnmapProvider is not advised', { module: 'EnmapProvider' });
+    logger.warn('Using the items entry of EnmapProvider is not advised',
+      { module: 'EnmapProvider' });
+
     return this.enmap.reduce((items, value, key) => {
       items.set(key, value);
       return items;
@@ -31,6 +33,8 @@ class EnmapProvider extends Provider {
 
   async init () {
     await this.enmap.defer;
+    logger.info(`${this.enmap.size} keys loaded from database ${this.enmap.db.name}`,
+      { module: 'EnmapProvider' });
   }
 
   /**
