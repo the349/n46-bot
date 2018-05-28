@@ -20,8 +20,6 @@ class N46Client extends AkairoClient {
     this.jobsDB = new EnmapProvider(jobs);
 
     this.logger = logger;
-
-    this.init();
   }
 
   /**
