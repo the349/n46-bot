@@ -5,8 +5,8 @@ const logger = require('../util/logger');
 class EnmapProvider extends Provider {
   /**
    * Creates a provider for an EnMap database
-   * @extends Provider
-   * @param enmap enmap database to use
+   * @extends {Provider}
+   * @param {enmap} enmap database to use
    */
   constructor (enmap) {
     super();
@@ -17,7 +17,7 @@ class EnmapProvider extends Provider {
    * Converts the whole enmap to a collection
    * Rather than just using a cache
    * USING THIS IS NOT ADVISED
-   * @return Collection a collection containing all the enmap items
+   * @return {Collection} a collection containing all the enmap items
    */
   get items () {
     logger.warn('Using the items entry of EnmapProvider is not advised',
@@ -40,10 +40,10 @@ class EnmapProvider extends Provider {
 
   /**
    * Gets a id-key pair from the database
-   * @param  any id ID of entry
-   * @param  string key key of data from ID
-   * @param  any defaultValue what to default to if data isn't found
-   * @return any data if found, or defaultValue
+   * @param  {any} id ID of entry
+   * @param  {string} key key of data from ID
+   * @param  {any} defaultValue what to default to if data isn't found
+   * @return {any} data if found, or defaultValue
    */
   get (id, key, defaultValue) {
     if (this.enmap.has(id)) {
@@ -56,8 +56,8 @@ class EnmapProvider extends Provider {
 
   /**
    * Gets all keys for an ID
-   * @param  any id
-   * @return object all keys from that ID
+   * @param  {any} id
+   * @return {object} all keys from that ID
    */
   getAll (id) {
     return this.enmap.get(id) || {};
@@ -65,10 +65,10 @@ class EnmapProvider extends Provider {
 
   /**
    * Sets a id-key pair from the database
-   * @param  any id ID of entry
-   * @param  string key key of data from ID
-   * @param  any value what to set the id-key pair to
-   * @return any the new value
+   * @param  {any} id ID of entry
+   * @param  {string} key key of data from ID
+   * @param  {any} value what to set the id-key pair to
+   * @return {any} the new value
    */
   set (id, key, value) {
     const data = this.enmap.get(id) || {};
@@ -78,9 +78,9 @@ class EnmapProvider extends Provider {
 
   /**
    * Deletes an id-key pair without deleting the ID
-   * @param  any id ID of entry
+   * @param  {any} id ID of entry
    * @param  {[type]} key key to delete from ID
-   * @return null
+   * @return {null}
    */
   delete (id, key) {
     const data = this.enmap.get(id) || {};

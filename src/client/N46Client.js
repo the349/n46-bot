@@ -5,8 +5,8 @@ const logger = require('../util/logger');
 class N46Client extends AkairoClient {
   /**
    * N46Client Class
-   * @param object clientConfig client-specific configuration
-   * @param object databases databases (enmaps) to use: { config, users, jobs }
+   * @param {object} clientConfig client-specific configuration
+   * @param {object} databases databases (enmaps) to use: { config, users, jobs }
    */
   constructor (clientConfig, { config, users, jobs }) {
     clientConfig.commandDirectory = './src/modules';
@@ -32,7 +32,7 @@ class N46Client extends AkairoClient {
 
   /**
    * Starts the bot
-   * @param  string token Discord API token
+   * @param  {string} token Discord API token
    */
   async start (token) {
     await this.init();
