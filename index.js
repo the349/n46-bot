@@ -4,6 +4,7 @@ const Client = require('./src/client/N46Client.js');
 const databases = Enmap.multi(['config', 'users', 'jobs'], EnmapLevel);
 const config = require('./config.json');
 
+config.emmiters = { process };
 const client = new Client(config, databases);
 
 client.logger.info('Logging on...', { module: 'N46Client' });
