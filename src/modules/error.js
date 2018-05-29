@@ -9,7 +9,7 @@ class UnhandledRejectionListener extends Listener {
   }
 
   exec (error) {
-    this.client.logger.error(error, {module: 'Modules'});
+    this.client.logger.error(error, {module: 'N46Bot'});
 
     if (this.client.akairoOptions.hasOwnProperty('dev') && this.client.akairoOptions.dev) {
       console.error(error);

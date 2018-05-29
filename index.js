@@ -11,4 +11,4 @@ client.logger.info('Logging on...', { module: 'N46Client' });
 
 client.start(config.token)
   .then(() => { client.logger.info('Logged in.', { module: 'N46Client' }); })
-  .catch((err) => { client.logger.error(err, { module: 'N46Client' }); });
+  .catch((err) => { client.emit('error', err); });
