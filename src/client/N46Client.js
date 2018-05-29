@@ -1,5 +1,6 @@
 const { AkairoClient } = require('discord-akairo');
 const EnmapProvider = require('../util/EnmapProvider');
+const Enmap = require('enmap');
 const JobManager = require('../util/JobManager');
 const logger = require('../util/logger');
 
@@ -18,7 +19,8 @@ class N46Client extends AkairoClient {
 
     this.configDB = new EnmapProvider(config);
     this.usersDB = new EnmapProvider(users);
-    this.jobsDB = new JobManager(jobs);
+    this.tempDB = new EnmapProvider(new Enmap());
+    this.jobs = new JobManager(jobs);
 
     this.logger = logger;
   }
