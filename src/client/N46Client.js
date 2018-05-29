@@ -29,6 +29,7 @@ class N46Client extends AkairoClient {
    * Init’s all the databases
    */
   async init () {
+    await this.jobs.init();
     await this.configDB.init();
     await this.usersDB.init();
   }
@@ -40,6 +41,7 @@ class N46Client extends AkairoClient {
   async start (token) {
     await this.init();
     await this.login(token);
+    this.jobs.scheduleAll();
   }
 }
 
