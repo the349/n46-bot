@@ -1,4 +1,3 @@
-
 class JobManager {
   /**
    * Manages jobs (like mutes) that should persist even if the bot restarts
@@ -11,10 +10,16 @@ class JobManager {
     this.running = {};
   }
 
+  async init () {
+    await this.db.defer;
+  }
+
   /**
    * Schedules all stored jobs for their given time
    */
   scheduleAll () {
+    this.client.logger.info('Scheduling all stored jobs... (only do this once)', { module: 'JobManager' });
+
     // This is redundant but needed to pass the context
     // down to the scheduled action
     return this.db.map((job, id) => {
@@ -30,6 +35,9 @@ class JobManager {
    */
   schedule (id, job) {
     // Add it to the database if not already
+    this.client.logger.info(`Scheduling job "${id}" with action "${job.action}"`,
+      { module: 'JobManager' });
+
     if (!this.db.has(id)) {
       this.db.set(id, job);
     }
@@ -42,7 +50,7 @@ class JobManager {
         this.actions[job.action](this.client, job.args);
       } else {
         this.client.logger
-          .warn(`Job with ID "${id}" and action "${job.action}" was never run, it might have been scheduled twice`,
+          .warn(`Job "${id}" with action "${job.action}" was never run, it might have been scheduled twice`,
             { module: 'JobManager' });
       }
     }, JobManager.calculateTime(job.time));
