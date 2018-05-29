@@ -22,9 +22,11 @@ class JobManager {
 
     // This is redundant but needed to pass the context
     // down to the scheduled action
-    return this.db.map((job, id) => {
+    const scheduled = this.db.map((job, id) => {
       this.schedule(id, job);
     });
+
+    this.client.logger.info(`Scheduled ${scheduled.length} jobs`, { module: 'JobManager' });
   }
 
   /**
