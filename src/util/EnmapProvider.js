@@ -96,6 +96,15 @@ class EnmapProvider extends Provider {
   clear (id) {
     this.enmap.delete(id);
   }
+
+  has (id, key) {
+    const hasID = this.enmap.has(id);
+    if (!key || !hasID) {
+      return hasID;
+    } else {
+      return this.enmap.get(id).hasOwnProperty(key);
+    }
+  }
 }
 
 module.exports = EnmapProvider;

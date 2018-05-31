@@ -19,6 +19,11 @@ describe('EnmapProvider', function () {
     expect(db.get('123456790', 'abc', -3)).to.equal(-3);
   });
 
+  it('should return the correct value when has() is run', function () {
+    expect(db.has('123456789', 'def')).to.equal(false);
+    expect(db.has('123456790', 'def', -3)).to.equal(true);
+  });
+
   it('should delete entries without harming other entries', function () {
     db.delete('123456790', 'def');
     expect(db.get('123456790', 'def', -30)).to.equal(-30);
