@@ -47,11 +47,8 @@ class JoinListener extends Listener {
    * @return {RichEmbed} Embed to use
    */
   createGreeterEmbed (member) {
-    const desc = ```yaml
-      Join: ${moment().format('D MMMM YYYY, HH:mm')}
-      Created: ${moment(member.user.createdAt).format('D MMMM YYYY, HH:mm')} (${moment(member.user.createdAt).fromNow()})
-      ID: ${member.id}
-    ```;
+    const desc =
+      `\`\`\`yaml\nJoin: ${moment().format('HH:mm:ss [UTC]')}\nCreated: ${moment(member.user.createdAt).format('D MMMM YYYY')} (${moment(member.user.createdAt).fromNow()})\nID: ${member.id}\`\`\``;
 
     return this.client.util.embed()
       .setColor('#2ECC40')
@@ -70,8 +67,8 @@ class JoinListener extends Listener {
     const introEmbed = this.createIntroEmbed(member);
     const greeterEmbed = this.createGreeterEmbed(member);
 
-    let introChannel = this.client.configDB('greeting', 'intro-channel', 'introduction');
-    let greeterChannel = this.client.configDB('greeting', 'greeter-channel', 'greeters');
+    let introChannel = this.client.configDB.get('greeting', 'intro-channel', 'introduction');
+    let greeterChannel = this.client.configDB.get('greeting', 'greeter-channel', 'greeters');
 
     introChannel = member.guild.channels.find('name', introChannel);
     greeterChannel = member.guild.channels.find('name', greeterChannel);
@@ -84,15 +81,15 @@ class JoinListener extends Listener {
 
     const greeterMessage = await greeterChannel.send(greeterEmbed);
 
-    return greeterMessage;
+    return { greeterMessage, greeterEmbed };
   }
 
   async exec (member) {
     if (!this.client.configDB.get('greeting', 'enabled', true)) return;
 
-    const greeterMessage = await this.sendMessages(member);
+    const greeterMessageAndEmbed = await this.sendMessages(member);
 
-    this.client.tempDB.set('ungreetedMembers', member.id, greeterMessage);
+    this.client.tempDB.set('ungreetedMembers', member.id, greeterMessageAndEmbed);
   }
 }
 
