@@ -47,7 +47,7 @@ class JoinListener extends Listener {
    * @return {RichEmbed} Embed to use
    */
   createGreeterEmbed (member) {
-    const desc = ```
+    const desc = ```yaml
       Join: ${moment().format('D MMMM YYYY, HH:mm')}
       Created: ${moment(member.user.createdAt).format('D MMMM YYYY, HH:mm')} (${moment(member.user.createdAt).fromNow()})
       ID: ${member.id}
@@ -77,13 +77,12 @@ class JoinListener extends Listener {
     greeterChannel = member.guild.channels.find('name', greeterChannel);
 
     introChannel.send(introEmbed);
-    const greeterMessage = await greeterChannel.send(greeterEmbed);
 
     if (newUser) {
-      await greeterMessage.react('⚠️');
-      await greeterMessage.react('🆕');
-      await greeterMessage.react('⏰');
+      greeterEmbed.setFooter('!!! This User Is New to Discord !!!');
     }
+
+    const greeterMessage = await greeterChannel.send(greeterEmbed);
 
     return greeterMessage;
   }
