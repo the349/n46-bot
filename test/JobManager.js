@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const Enmap = require('enmap');
 const JobManager = require('../src/util/JobManager');
-const logger = require('../src/util/logger');
+const logger = { info: () => null };
 
 describe('JobManager', function () {
   const db = new Enmap();
