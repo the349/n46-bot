@@ -47,4 +47,25 @@ describe('EnmapProvider', function () {
       done();
     }, 10);
   });
+
+  let action3Completed = false;
+
+  manager.action('test3', function (client, args) {
+    action3Completed = (args === 'this should never run');
+  });
+
+  it('should not run deleted jobs', function (done) {
+    manager.schedule('123123123', {
+      time: new Date().getTime() + 10,
+      action: 'test3',
+      args: 'this should never run'
+    });
+
+    manager.unschedule('123123123');
+
+    setTimeout(function () {
+      expect(action3Completed).to.equal(false);
+      done();
+    }, 10);
+  });
 });

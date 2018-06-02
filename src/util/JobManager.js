@@ -52,10 +52,18 @@ class JobManager {
         this.actions[job.action](this.client, job.args);
       } else {
         this.client.logger
-          .warn(`Job "${id}" with action "${job.action}" was never run, it might have been scheduled twice`,
+          .warn(`Job "${id}" with action "${job.action}" was never run, it might have been scheduled twice or canceled`,
             { module: 'JobManager' });
       }
     }, JobManager.calculateTime(job.time));
+  }
+
+  /**
+   * Unschedules a job using a timeout
+   * @param  {string} id ID for the job
+   */
+  unschedule (id) {
+    this.db.delete(id);
   }
 
   /**
