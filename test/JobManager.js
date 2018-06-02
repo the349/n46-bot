@@ -3,7 +3,7 @@ const Enmap = require('enmap');
 const JobManager = require('../src/util/JobManager');
 const logger = require('../src/util/logger');
 
-describe('EnmapProvider', function () {
+describe('JobManager', function () {
   const db = new Enmap();
 
   db.set('101010101', {
