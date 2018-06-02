@@ -44,7 +44,7 @@ class JobManager {
       this.db.set(id, job);
     }
 
-    return setTimeout(() => {
+    this.running[id] = setTimeout(() => {
       // Don't repeat a job
       // Don't run an actionless job
       if (this.db.has(id) && this.actions.hasOwnProperty(job.action)) {
@@ -56,6 +56,8 @@ class JobManager {
             { module: 'JobManager' });
       }
     }, JobManager.calculateTime(job.time));
+
+    return this.running[id];
   }
 
   /**
@@ -64,6 +66,11 @@ class JobManager {
    */
   unschedule (id) {
     this.db.delete(id);
+
+    if (this.running.hasOwnProperty(id)) {
+      clearTimeout(this.running[id]);
+      delete this.running[id];
+    }
   }
 
   /**
