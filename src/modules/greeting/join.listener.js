@@ -1,4 +1,5 @@
 const { Listener } = require('discord-akairo');
+const UI = require('../../util/UI');
 const moment = require('moment');
 
 const longGreetMessage =
@@ -47,8 +48,11 @@ class JoinListener extends Listener {
    * @return {RichEmbed} Embed to use
    */
   createGreeterEmbed (member) {
-    const desc =
-      `\`\`\`yaml\nJoin: ${moment().format('HH:mm:ss [UTC]')}\nCreated: ${moment(member.user.createdAt).format('D MMMM YYYY')} (${moment(member.user.createdAt).fromNow()})\nID: ${member.id}\`\`\``;
+    const desc = UI.objectToCodeblock({
+      'Join': moment().utc().format('HH:mm:ss [UTC]'),
+      'Created': moment(member.user.createdAt).utc().format('D MMMM YYYY [UTC]'),
+      'ID': member.id
+    });
 
     return this.client.util.embed()
       .setColor('#2ECC40')
