@@ -50,7 +50,7 @@ class JoinListener extends Listener {
   createGreeterEmbed (member) {
     const desc = UI.objectToCodeblock({
       'Join': moment().utc().format('HH:mm:ss [UTC]'),
-      'Created': moment(member.user.createdAt).utc().format('D MMMM YYYY [UTC]'),
+      'Created': moment(member.user.createdAt).utc().fromNow(),
       'ID': member.id
     });
 
