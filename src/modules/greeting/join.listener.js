@@ -62,7 +62,7 @@ class JoinListener extends Listener {
 
   /**
    * Sends notifications to intro and greeter channels
-   * @param  {[type]} member New member
+   * @param  {GuildMember} member New member
    * @return {Promise} Returns the greeter channels message object for editing
    */
 
