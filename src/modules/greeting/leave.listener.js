@@ -9,10 +9,6 @@ class LeaveListener extends Listener {
       emmiter: 'client',
       category: 'greeting'
     });
-
-    this.client.jobs.action('deleteUser', (client, userID) => {
-      client.usersDB.clear(userID);
-    });
   }
 
   exec (member) {
